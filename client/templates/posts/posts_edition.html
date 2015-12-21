@@ -1,0 +1,43 @@
+<template name="editer">
+
+
+    <div class="row">
+	    <div class="col-md-12">
+            <h3> Éditez votre post </h3>
+	    </div>
+        <div class="col-md-12">
+            <!--zimage ter la et ou touche pas ,  donc en théroie sa fonctionne , j'ai deviner le chemin du cfs reverse code quoi-->
+            <img src="{{imageName}}">
+        </div>
+    </div>
+
+
+
+    <form class="main form">
+
+        <div class="form-group">
+            <label for="categorie" class="control-label"> Cat&eacute;gorie</label>
+
+            <div class="controls">
+                <select name="categorie" id="categorie" value="{{categorieID}}" class="form-control">
+				    {{#each categories}}
+                        <option value="{{_id}}">
+						    {{nom}}
+                        </option>
+				    {{/each}}
+                </select>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class ="form-control" value="{{description}}" name="description" rows="3" cols="20" id="description" placeholder="Description"></textarea>
+        </div>
+
+	    <br/>
+
+        <input type="submit" value="Modifier" class="btn btn-primary" required/>
+
+    </form>
+</template>

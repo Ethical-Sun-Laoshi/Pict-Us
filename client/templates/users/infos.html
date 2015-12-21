@@ -1,0 +1,35 @@
+<template name="user_show_infos" xmlns="http://www.w3.org/1999/html">
+    <div class="content">
+
+        <div class="row">
+	        <div class="col-md-3">
+
+                <ul class="nav nav-list">
+                    <li class="nav-header">À propos</li>
+	                <li>{{>avatar user=this size="large" shape="circle"}}</li>
+                    <li>Username {{currentUser.username}}</li>
+                    <li>Prénom {{currentUser.profile.firstName}}</li>
+                    <li>Nom {{currentUser.profile.lastName}}</li>
+                    <li>Né(e) le : {{currentUser.profile.birthday}}</li>
+                    <li>Email {{currentUser.emails}}</li>
+                </ul>
+	        </div>
+
+
+	        <div class="col-md-9">
+		        <div class="well well-large">
+	                <label for="statut">Quoi de neuf ?</label>
+	                <input name="statut" id="statut" class="input-xxlarge statuttext" type="text" placeholder="Quoi de neuf ?"/>
+		        </div>
+		        <ul id="statuts" class="unstyled">
+			        {{#each statuts}}
+				        {{>statut}}
+			         {{/each}}
+		        </ul>
+	        </div>
+
+        </div> <!-- row -->
+
+    </div> <!--content-->
+
+</template>

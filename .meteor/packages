@@ -1,0 +1,40 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+iron:router
+
+twbs:bootstrap
+natestrauser:font-awesome
+richsilv:owl-carousel
+
+sacha:spin
+chrismbeckett:toastr
+raix:ui-dropped-event
+jquery
+rajit:bootstrap3-datepicker
+
+ian:accounts-ui-bootstrap-3
+accounts-password
+accounts-facebook
+
+cfs:filesystem
+cfs:standard-packages
+cfs:ui
+cfs:ejson-file
+reactive-var
+dburles:collection-helpers
+momentjs:moment
+msavin:mongol
+
+
+
+templates:tabs
+utilities:avatar
+
+natestrauser:animate-css
+meteorhacks:fast-render
+fastclick

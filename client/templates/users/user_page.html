@@ -1,0 +1,28 @@
+<template name="user_page">
+
+
+    <div class="profile-header text-center" style="background-image: url(/images/profile-cover.jpg); ">
+
+        <div class="container-fluid">
+            <div class="container-inner">
+                <img class="img-circle media-object" src="{{user_image}}" alt="{{currentUser.username}} profil image">
+                <img class="img-circle media-object" src="{{user.profileImageUrl}}" alt="{{currentUser.username}} avatar numero 2">
+	            {{> avatar user=this shape="circle"}}
+	            <h3 class="profile-header-user">{{currentUser.username}}</h3>
+                <p class="profile-header-bio">Salut ! C'est moi !</p>
+            </div>
+        </div>
+
+	    </div>
+
+	{{#basicTabs name="" tabs=tabs}}
+	     <!--Tab panes-->
+
+		{{#tabContent slug="user_show_infos"}}{{>user_show_infos}} {{/tabContent}}
+		{{#tabContent slug="user_edit"}}{{>user_edit}} {{/tabContent}}
+		{{#tabContent slug="my_posts"}}{{>my_posts}} {{/tabContent}}
+
+	{{/basicTabs}}
+
+
+</template>

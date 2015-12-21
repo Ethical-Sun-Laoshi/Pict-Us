@@ -1,0 +1,17 @@
+<template name="triage">
+    <div class="gallery">
+	    {{#each posts}}
+			{{>post_link}}
+		{{else}}
+	        <div class="wrapper-message">
+	            <div class="title-message">Oops !</div>
+	            <div class="subtitle-message">Il n'y a pas encore de photos &aacute; publier par ici.
+		            <br/>
+		            Fa&icirc;tes le premier pas
+	            <br/>
+	                <a href="{{pathFor 'publier'}}"><i class="fa fa-plus fa-2x"></i></a>
+	            </div>
+	        </div>
+	    {{/each}}
+    </div>
+</template>

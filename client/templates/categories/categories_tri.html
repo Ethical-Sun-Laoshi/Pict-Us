@@ -1,0 +1,18 @@
+<template name="categories_tri">
+
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-chevron-circle-down fa-3x"></i>
+    </a>
+    <ul id ="trier-par-categorie" class="dropdown-menu" role="menu">
+	{{#each categorie}}
+		<li>
+			<a href="{{pathFor route='triage' value=this.value}}">
+				{{nom}}
+			</a>
+		</li>
+		<li class="divider"></li>
+    {{/each}}
+
+    </ul>
+
+</template>

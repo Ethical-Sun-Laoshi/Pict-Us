@@ -1,0 +1,109 @@
+<template name="post_page">
+
+    <div id="fb-root"></div>
+
+	<!--  //For pictus.meteor.com
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.4&appId=861023100635345";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    -->
+
+	<!-- For localhost:3000-->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '906312066106448',
+                xfbml      : true,
+                version    : 'v2.4'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/fr_FR/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+	<div class="post">
+        <div class="">
+            <div class="post-content">
+                <div class="image-info">
+                    Post&eacute; le : {{postDate}} |
+                    par
+                    <a class="user-link" href="{{pathFor route='auteur' auteur=this.auteur}}">
+						{{#if createur}} Moi
+						{{else}} {{auteur}}
+						{{/if}}
+                    </a>
+
+                    || CATEGORIE : {{this.categorieID}}
+
+					{{#if createur}}
+                        <div>
+                            <a class="btn dropdown-toggle" data-toggle="dropdown" href="">
+                                <i class="fa fa-cog fa-3x"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="edit-image" href="{{pathFor "editer"}}">
+                                        <i class="fa fa-pencil fa-2x"></i>&Eacute;diter
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a class="delete-image" href="#">
+                                        <i class="fa fa-trash-o fa-2x"></i> Supprimer </a>
+                                </li>
+                            </ul>
+
+                        </div>
+					{{/if}}
+
+                    <br/><br/> {{description}}
+                    <br/>
+
+                </div>
+
+
+                <img src="{{imageName}}">
+
+
+		<!-- div div ? -->
+
+        <div class="fb-like" data-href="{{post_page}}" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+
+        <ul class="comments">
+			{{#each commentaires}}
+				{{> commentaire}}
+			{{/each}}
+        </ul>
+
+
+		{{#if currentUser}}
+            <div class="fb-comments" data-href="{{post_page}}" data-numposts="2"></div>
+			{{> commentaire_insertion}}
+		{{else}}
+            <p>Please log in to leave a comment.</p>
+		{{/if}}
+
+
+            </div>
+
+
+        </div>
+
+
+	</div> <!-- post page-->
+
+
+</template>

@@ -1,0 +1,7 @@
+<template name="my_posts">
+	{{#each myPosts}}
+        {{>post_link}}
+		{{else}}
+		<p>Vous n'avez pas encore publi&eacute; de posts ! </p>
+	{{/each}}
+</template>

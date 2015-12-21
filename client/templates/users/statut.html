@@ -1,0 +1,24 @@
+<template name="statut">
+    <div class="media">
+
+        <div class="media-body">
+	        <h5>{{owner}}</h5>
+	        <p>{{text}}</p>
+
+	        <div class="media">
+		        {{#if likeStatut}}
+		        <span class="badge badge-success">{{likeStatut}}</span> fan
+		        {{/if}}
+		        <h4 class="media-heading">
+                    <a class="likebtn muted"><small>J'aime</small></a>
+
+		        </h4>
+		        <ul class="unstyled">
+			        {{#each statutCommentaires}}
+			            {{>statutCommentaire}}
+			        {{/each}}
+		        </ul>
+	        </div>
+        </div>
+    </div>
+</template>

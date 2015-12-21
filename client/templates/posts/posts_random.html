@@ -1,0 +1,11 @@
+<template name="posts_random">
+
+    <div class="posts">
+
+		{{#each postsRandom}}
+            {{>post_link}}
+		{{/each}}
+
+        <a href="{{pathFor 'posts_liste'}}" class="btn-primary">Découvrez toutes les images !</a>
+    </div> <!-- class posts-->
+</template>

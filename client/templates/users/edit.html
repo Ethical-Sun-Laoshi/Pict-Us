@@ -1,0 +1,63 @@
+<template name="user_edit">
+
+    <!--<div>
+        1
+        <img src="https://graph.facebook.com/{facebookId}/picture?type=large" alt="..." class="img-circle">
+        2
+        <img src="https://graph.facebook.com/user.profile.name/picture?type=large" alt="..." class="img-circle">
+        3
+        <img src="user.profile" >
+        4
+        <img src="{{currentUser.profile.picture}}" alt="{{currentUser.username}}" >
+        5
+		{{user_image}}
+        6
+        <img src="{{user_image}}" alt="{{currentUser.username}} profil image"/>
+		7 <img src="{{user.profileImageUrl}}" alt="avatarURL"/>
+    </div> -->
+    <form>
+
+        <input type="file" id="avatarImport" value="avatarImport" name="avatarImport"/>
+
+        <div class="form-group">
+            <label for="prenom" class="col-md-3 control-label">Pr&eacute;nom</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="prenom" id="prenom" placeholder="{{user_firstname}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nom" class="col-md-3 control-label">Nom</label>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="nom" id="nom" placeholder="{{user_lastname}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="datenaissance" class="col-md-3 control-label">Date de naissance</label>
+            <div class="col-md-9">
+                <input type="date" class="form-control" name="datenaissance" id="datenaissance" placeholder="{{user_birthday}}">
+            </div>
+            <div id="date">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="col-md-3 control-label">Email</label>
+            <div class="col-md-9">
+                <input type="email" class="form-control" name="email" id="email" placeholder="{{user_email}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div></div>
+            <div class="controls">
+                <button type="submit" class="btn btn-success modifier-compte">Modifier</button>
+            </div>
+        </div>
+    </form>
+
+    <button type="button" class="btn btn-danger supprimer-compte">Supprimer le compte</button>
+
+
+</template>
